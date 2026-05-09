@@ -1,0 +1,174 @@
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Mail, Phone, MapPin } from 'lucide-react';
+
+// Social icons (not available in installed lucide-react version)
+const FacebookIcon = ({ size = 18 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const InstagramIcon = ({ size = 18 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const TwitterIcon = ({ size = 18 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+  </svg>
+);
+
+// Navigation link that scrolls to top when clicked
+const FooterLink = ({ to, children }) => {
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Small delay so smooth scroll doesn't fight route change
+    setTimeout(() => navigate(to), 80);
+  };
+  return (
+    <a
+      href={to}
+      onClick={handleClick}
+      className="group relative text-brand-cream/60 hover:text-brand-saffron transition-colors duration-300 inline-flex items-center gap-2 text-sm"
+    >
+      <span className="w-0 group-hover:w-3 h-px bg-brand-saffron transition-all duration-300 inline-block" />
+      {children}
+    </a>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="bg-brand-dark text-brand-cream relative overflow-hidden">
+      {/* Top maroon/saffron accent strip */}
+      <div className="h-1 w-full bg-gradient-to-r from-brand-maroon via-brand-saffron to-brand-gold" />
+
+      {/* Subtle dot pattern bg */}
+      <div
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(circle, #C8A96B 1px, transparent 1px)', backgroundSize: '36px 36px' }}
+      />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-10 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+          {/* Brand Section */}
+          <div className="space-y-6 lg:col-span-1">
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-block">
+              <h2 className="text-2xl font-playfair font-bold tracking-tight">
+                <span className="text-brand-saffron">UZHAVAN</span>{' '}
+                <span className="text-brand-cream italic">THOTTAM</span>
+              </h2>
+              <p className="text-brand-gold/60 text-[10px] tracking-[0.3em] uppercase mt-1">Natural · Pure · Trusted</p>
+            </Link>
+            <p className="text-brand-cream/50 leading-relaxed text-sm max-w-xs">
+              Bringing the pure essence of nature from the farm to your table.
+              Sustainable, organic, and authentically crafted.
+            </p>
+
+            {/* Social icons */}
+            <div className="flex space-x-3 pt-2">
+              {[FacebookIcon, InstagramIcon, TwitterIcon].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="w-9 h-9 rounded-sm border border-brand-cream/10 flex items-center justify-center text-brand-cream/40 hover:border-brand-saffron hover:text-brand-saffron hover:bg-brand-saffron/10 transition-all duration-300"
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-brand-saffron mb-8">
+              Quick Links
+            </h3>
+            <ul className="space-y-5">
+              {[
+                { label: 'Home',     to: '/'         },
+                { label: 'About',    to: '/about'    },
+                { label: 'Products', to: '/products' },
+                { label: 'Gallery',  to: '/gallery'  },
+                { label: 'Contact',  to: '/contact'  },
+              ].map(({ label, to }) => (
+                <li key={label}>
+                  <FooterLink to={to}>{label}</FooterLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Categories */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-brand-saffron mb-8">
+              Our Products
+            </h3>
+            <ul className="space-y-5">
+              {[
+                'Cold Pressed Oils',
+                'Natural Powders',
+                'Organic Sweeteners',
+                'Dry Fruits',
+                'Spices & Coffee',
+              ].map((cat) => (
+                <li key={cat}>
+                  <FooterLink to="/products">{cat}</FooterLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-brand-saffron mb-8">
+              Get in Touch
+            </h3>
+            <div className="space-y-5">
+              <div className="flex items-start gap-4 group">
+                <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
+                  <MapPin className="text-brand-saffron" size={16} />
+                </div>
+                <p className="text-brand-cream/50 text-sm leading-relaxed">
+                  123 Farm Street, Organic Valley,<br />Tamil Nadu
+                </p>
+              </div>
+              <div className="flex items-center gap-4 group">
+                <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
+                  <Phone className="text-brand-saffron" size={16} />
+                </div>
+                <p className="text-brand-cream/50 text-sm">+91 98765 43210</p>
+              </div>
+              <div className="flex items-center gap-4 group">
+                <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
+                  <Mail className="text-brand-saffron" size={16} />
+                </div>
+                <p className="text-brand-cream/50 text-sm">info@uzhavanthottam.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-brand-cream/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-brand-cream/25 text-xs tracking-widest uppercase">
+            © {new Date().getFullYear()} Uzhavan Thottam. All Rights Reserved.
+          </p>
+          <p className="text-brand-cream/20 text-xs">
+            Natural · Pure · Trusted
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
