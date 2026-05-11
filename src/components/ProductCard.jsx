@@ -9,6 +9,9 @@ const catColors = {
   Beverages:    { dot: '#1A4A2E', label: 'bg-green-50  text-green-800  border-green-200'  },
   Spices:       { dot: '#B45309', label: 'bg-orange-50 text-orange-700 border-orange-200' },
   'Dry Fruits': { dot: '#78350F', label: 'bg-yellow-50 text-yellow-800 border-yellow-200' },
+  Dairy:        { dot: '#4B5563', label: 'bg-gray-50   text-gray-700   border-gray-200'   },
+  Pickles:      { dot: '#991B1B', label: 'bg-rose-50   text-rose-800   border-rose-200'   },
+  Fresh:        { dot: '#15803D', label: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
 };
 
 const ProductCard = ({ product, index = 0 }) => {
@@ -47,7 +50,7 @@ const ProductCard = ({ product, index = 0 }) => {
       <div className="h-0.5 w-full flex-shrink-0" style={{ backgroundColor: cat.dot }} />
 
       {/* ── Image ── */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: '1 / 1' }}>
+      <div className="relative overflow-hidden">
         <img
           src={product.image}
           alt={product.name}

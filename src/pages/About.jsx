@@ -1,5 +1,6 @@
 import AnimatedSection from '../components/AnimatedSection';
 import { Leaf, Award, Sprout } from 'lucide-react';
+import farmingMethods from '../assets/Types_and_Methods_of_Organic_Farming.webp';
 
 const About = () => {
   return (
@@ -50,7 +51,7 @@ const About = () => {
             </AnimatedSection>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
             <AnimatedSection className="order-2 lg:order-1 relative">
               <div className="aspect-video lg:aspect-square rounded-sm overflow-hidden shadow-2xl">
                 <img
@@ -81,6 +82,17 @@ const About = () => {
               </div>
             </AnimatedSection>
           </div>
+
+          {/* Organic Farming Methods Section */}
+          {/* <AnimatedSection direction="up" className="mb-20">
+            <div className="rounded-sm overflow-hidden shadow-2xl border border-brand-dark/5 bg-white p-2">
+              <img
+                src={farmingMethods}
+                alt="Types and Methods of Organic Farming"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </AnimatedSection> */}
         </div>
       </section>
 
@@ -118,7 +130,7 @@ const About = () => {
             </AnimatedSection>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
             {[
               "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
               "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800",
@@ -129,6 +141,17 @@ const About = () => {
               </AnimatedSection>
             ))}
           </div>
+
+          {/* Organic Farming Methods Section - Before Footer */}
+          <AnimatedSection direction="up" delay={0.4}>
+            <div className="rounded-sm overflow-hidden shadow-2xl border border-brand-dark/5 bg-white p-2">
+              <img
+                src={farmingMethods}
+                alt="Organic Farming Methods"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </div>
