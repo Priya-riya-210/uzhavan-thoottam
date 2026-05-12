@@ -199,13 +199,15 @@ const Gallery = () => {
               Follow Our Story
             </span>
             <h2 className="font-playfair font-bold text-brand-cream text-3xl sm:text-4xl md:text-5xl italic mb-4">
-              @uzhavanthottam_organic
+              @Uzhavan_2026
             </h2>
             <p className="text-brand-cream/40 text-sm mb-10">
               Daily stories from our farm, recipes, and behind-the-scenes of traditional production.
             </p>
             <a
-              href="#"
+              href="https://www.instagram.com/Uzhavan_2026"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 border border-brand-saffron/40 text-brand-saffron px-10 py-3 text-xs font-bold tracking-widest uppercase hover:bg-brand-saffron hover:text-brand-dark transition-all duration-300"
             >
               Visit Instagram Profile

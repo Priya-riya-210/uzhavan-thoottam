@@ -56,7 +56,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm">Location</h3>
-                      <p className="text-brand-dark/60 leading-relaxed">123 Organic Lane, Farm Valley, <br />Coimbatore, Tamil Nadu 641001</p>
+                      <p className="text-brand-dark/60 leading-relaxed">4/47 Kangayampalayam, Kuppam (po), <br />Karur (dt), Pin code : 639111</p>
                     </div>
                   </div>
 
@@ -66,8 +66,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm">Call Us</h3>
-                      <p className="text-brand-dark/60 leading-relaxed">+91 98765 43210</p>
-                      <p className="text-brand-dark/60 leading-relaxed">+91 91234 56789</p>
+                      <p className="text-brand-dark/60 leading-relaxed">+91 63851 72761</p>
                     </div>
                   </div>
 
@@ -87,8 +86,12 @@ const Contact = () => {
               <AnimatedSection delay={0.2}>
                 <h2 className="text-3xl font-playfair font-bold text-brand-dark mb-8">Follow Us</h2>
                 <div className="flex gap-6">
-                  {[FacebookIcon, InstagramIcon, TwitterIcon].map((Icon, i) => (
-                    <a key={i} href="#" className="w-12 h-12 border border-brand-saffron/30 flex items-center justify-center text-brand-saffron rounded-full hover:bg-brand-saffron hover:text-brand-dark transition-all duration-300">
+                  {[
+                    { Icon: FacebookIcon, href: 'https://www.facebook.com/Uzhavanthottam' },
+                    { Icon: InstagramIcon, href: 'https://www.instagram.com/Uzhavan_2026' },
+                    { Icon: TwitterIcon, href: '#' }
+                  ].map(({ Icon, href }, i) => (
+                    <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-brand-saffron/30 flex items-center justify-center text-brand-saffron rounded-full hover:bg-brand-saffron hover:text-brand-dark transition-all duration-300">
                       <Icon size={20} />
                     </a>
                   ))}

@@ -6,6 +6,7 @@ import AnimatedSection from '../components/AnimatedSection';
 import ProductCard from '../components/ProductCard';
 import { products, testimonials } from '../data/mockData';
 import heroImg from '../assets/products-group-img.jpeg';
+import natureImg from '../assets/about/nature-pic.webp';
 
 const stagger = {
   hidden: {},
@@ -245,7 +246,7 @@ const Home = () => {
             <AnimatedSection direction="left" className="relative">
               <div className="overflow-hidden aspect-[4/5]">
                 <img
-                  src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?auto=format&fit=crop&q=80&w=800"
+                  src={natureImg}
                   alt="Organic Farming"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />

@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { ShoppingCart, Eye } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
+import { Eye, X } from 'lucide-react';
 
 // Category accent colors
 const catColors = {
@@ -15,6 +16,7 @@ const catColors = {
 };
 
 const ProductCard = ({ product, index = 0 }) => {
+  const [showPreview, setShowPreview] = useState(false);
   const cardRef = useRef(null);
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -67,16 +69,11 @@ const ProductCard = ({ product, index = 0 }) => {
                         transition-opacity duration-300
                         hidden sm:flex">
           <button
+            onClick={(e) => { e.stopPropagation(); setShowPreview(true); }}
             className="w-10 h-10 bg-brand-saffron text-brand-dark rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-            title="Add to cart"
+            title="View images"
           >
-            <ShoppingCart size={15} />
-          </button>
-          <button
-            className="w-10 h-10 bg-white text-brand-dark rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-            title="View details"
-          >
-            <Eye size={15} />
+            <Eye size={18} />
           </button>
         </div>
 
@@ -102,31 +99,15 @@ const ProductCard = ({ product, index = 0 }) => {
           {product.name}
         </h3>
 
-        {/* Price + action */}
-        <div className="flex items-center justify-between">
-          <span className="font-playfair font-bold text-brand-saffron text-sm md:text-base">
-            {product.price}
-          </span>
-          {/* Mobile: visible action buttons row (since no hover on touch) */}
-          <div className="flex items-center gap-2 sm:hidden">
-            <button
-              className="w-7 h-7 bg-brand-saffron text-brand-dark rounded-full flex items-center justify-center"
-              title="Add to cart"
-            >
-              <ShoppingCart size={12} />
-            </button>
-            <button
-              className="w-7 h-7 border border-brand-dark/15 text-brand-dark rounded-full flex items-center justify-center"
-              title="View"
-            >
-              <Eye size={12} />
-            </button>
-          </div>
-
-          {/* Desktop: text link */}
-          <span className="hidden sm:block text-[9px] font-bold uppercase tracking-wider text-brand-dark/25 group-hover:text-brand-maroon transition-colors duration-300">
-            View →
-          </span>
+        {/* Action icons */}
+        <div className="flex items-center justify-between mt-2">
+          <button
+            onClick={(e) => { e.stopPropagation(); setShowPreview(true); }}
+            className="text-brand-saffron hover:text-brand-maroon transition-colors flex items-center gap-2 group/btn"
+          >
+            <Eye size={16} className="group-hover/btn:scale-110 transition-transform" />
+            <span className="text-[10px] font-bold uppercase tracking-widest">View Image</span>
+          </button>
         </div>
 
         {/* Sweep underline — desktop only */}
@@ -135,6 +116,56 @@ const ProductCard = ({ product, index = 0 }) => {
           style={{ backgroundColor: cat.dot }}
         />
       </div>
+      {/* Lightbox Preview - rendered via Portal to escape 3D transforms */}
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {showPreview && (
+            <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 md:p-10">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setShowPreview(false)}
+                className="absolute inset-0 bg-brand-dark/95 backdrop-blur-md"
+              />
+
+              {/* Close button - Top Right */}
+              <button
+                onClick={() => setShowPreview(false)}
+                className="absolute top-6 right-6 z-[1010] text-brand-cream/60 hover:text-brand-saffron transition-colors p-2 bg-white/5 rounded-full"
+                title="Close"
+              >
+                <X size={32} />
+              </button>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                className="relative z-[1000] max-w-5xl w-full flex flex-col items-center"
+              >
+                <div className="relative group/modal overflow-hidden rounded-sm shadow-2xl border border-brand-cream/10">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="max-w-full max-h-[80vh] object-contain"
+                  />
+                  <div className="absolute inset-0 pointer-events-none border-[12px] border-white/5 opacity-50" />
+                </div>
+                <div className="mt-8 text-center">
+                  <h3 className="text-brand-cream font-playfair font-bold text-3xl md:text-4xl mb-3">{product.name}</h3>
+                  <div className="flex items-center justify-center gap-3">
+                    <span className="h-px w-8 bg-brand-saffron/40" />
+                    <p className="text-brand-saffron text-xs font-bold uppercase tracking-[0.3em]">{product.category}</p>
+                    <span className="h-px w-8 bg-brand-saffron/40" />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </motion.div>
   );
 };

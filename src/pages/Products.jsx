@@ -80,7 +80,7 @@ const Products = () => {
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
               {filteredProducts.map((product, idx) => (
-                <div key={product.id} onClick={() => setSelectedProduct(product)} className="cursor-pointer">
+                <div key={product.id}>
                   <ProductCard product={product} index={idx} />
                 </div>
               ))}
@@ -125,27 +125,10 @@ const Products = () => {
               <div className="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
                 <span className="text-brand-saffron font-bold tracking-[0.2em] uppercase text-xs mb-4 block">{selectedProduct.category}</span>
                 <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-6">{selectedProduct.name}</h2>
-                <p className="text-3xl text-brand-brown font-bold mb-8">{selectedProduct.price}</p>
                 <div className="h-px w-full bg-brand-dark/10 mb-8" />
-                <p className="text-brand-dark/70 text-lg leading-relaxed mb-10">
+                <p className="text-brand-dark/70 text-lg leading-relaxed mb-6">
                   {selectedProduct.description}
                 </p>
-
-                <div className="flex flex-col sm:flex-row gap-6">
-                  <button className="btn-primary flex items-center justify-center flex-grow py-5 group" type="button">
-                    <ShoppingBag className="mr-3 group-hover:scale-110 transition-transform" size={20} />
-                    Add to Cart
-                  </button>
-                </div>
-
-                <div className="mt-12 space-y-4">
-                  <p className="text-xs text-brand-dark/40 uppercase tracking-widest flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3" /> In Stock & Ready to Ship
-                  </p>
-                  <p className="text-xs text-brand-dark/40 uppercase tracking-widest flex items-center">
-                    <span className="w-2 h-2 bg-brand-saffron rounded-full mr-3" /> Free Delivery on orders above ₹999
-                  </p>
-                </div>
               </div>
             </motion.div>
           </div>

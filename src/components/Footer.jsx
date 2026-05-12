@@ -75,10 +75,16 @@ const Footer = () => {
 
             {/* Social icons */}
             <div className="flex space-x-3 pt-2">
-              {[FacebookIcon, InstagramIcon, TwitterIcon].map((Icon, i) => (
+              {[
+                { Icon: FacebookIcon, href: 'https://www.facebook.com/Uzhavanthottam' },
+                { Icon: InstagramIcon, href: 'https://www.instagram.com/Uzhavan_2026' },
+                { Icon: TwitterIcon, href: '#' }
+              ].map(({ Icon, href }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-sm border border-brand-cream/10 flex items-center justify-center text-brand-cream/40 hover:border-brand-saffron hover:text-brand-saffron hover:bg-brand-saffron/10 transition-all duration-300"
                 >
                   <Icon size={16} />
@@ -138,14 +144,14 @@ const Footer = () => {
                   <MapPin className="text-brand-saffron" size={16} />
                 </div>
                 <p className="text-brand-cream/50 text-sm leading-relaxed">
-                  123 Farm Street, Organic Valley,<br />Tamil Nadu
+                  4/47 Kangayampalayam, Kuppam (po),<br />Karur (dt), Pin code : 639111
                 </p>
               </div>
               <div className="flex items-center gap-4 group">
                 <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
                   <Phone className="text-brand-saffron" size={16} />
                 </div>
-                <p className="text-brand-cream/50 text-sm">+91 98765 43210</p>
+                <p className="text-brand-cream/50 text-sm">+91 63851 72761</p>
               </div>
               <div className="flex items-center gap-4 group">
                 <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">

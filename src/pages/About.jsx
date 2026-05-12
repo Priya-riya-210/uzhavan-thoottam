@@ -1,6 +1,8 @@
 import AnimatedSection from '../components/AnimatedSection';
 import { Leaf, Award, Sprout } from 'lucide-react';
 import farmingMethods from '../assets/Types_and_Methods_of_Organic_Farming.webp';
+import nutsImg from '../assets/about/nuts-image.webp';
+import coffeeBeansImg from '../assets/about/Coffee-beans.webp';
 
 const About = () => {
   return (
@@ -40,7 +42,7 @@ const About = () => {
             <AnimatedSection delay={0.2} className="relative">
               <div className="aspect-video lg:aspect-square rounded-sm overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800"
+                  src={nutsImg}
                   alt="Traditional Farming"
                   className="w-full h-full object-cover"
                 />
@@ -55,7 +57,7 @@ const About = () => {
             <AnimatedSection className="order-2 lg:order-1 relative">
               <div className="aspect-video lg:aspect-square rounded-sm overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=800"
+                  src={coffeeBeansImg}
                   alt="Quality Control"
                   className="w-full h-full object-cover"
                 />
