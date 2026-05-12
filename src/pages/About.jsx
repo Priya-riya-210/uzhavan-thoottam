@@ -14,12 +14,12 @@ const About = () => {
             alt="Farm background"
           />
         </div>
-        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-gold to-brand-maroon" />
+        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-saffron to-brand-maroon" />
         <div className="container-custom relative z-10 px-6 text-center">
           <AnimatedSection>
-            <span className="text-brand-gold font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Our Legacy</span>
+            <span className="text-brand-saffron font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Our Legacy</span>
             <h1 className="text-5xl md:text-7xl font-playfair font-bold text-brand-cream mb-6">Our Story</h1>
-            <div className="h-1 w-24 bg-brand-gold mx-auto" />
+            <div className="h-1 w-24 bg-brand-saffron mx-auto" />
           </AnimatedSection>
         </div>
       </section>
@@ -45,7 +45,7 @@ const About = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-brand-gold p-8 shadow-xl hidden md:block">
+              <div className="absolute -bottom-8 -left-8 bg-brand-saffron p-8 shadow-xl hidden md:block">
                 <p className="text-brand-dark font-playfair font-bold text-2xl italic">"Pure from the Soil"</p>
               </div>
             </AnimatedSection>
@@ -70,7 +70,7 @@ const About = () => {
                   { title: "Sustainable Living", desc: "We are committed to eco-friendly packaging and supporting sustainable farming practices.", icon: Leaf }
                 ].map((item, index) => (
                   <div key={index} className="flex gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 bg-brand-gold/10 flex items-center justify-center text-brand-gold rounded-full">
+                    <div className="flex-shrink-0 w-12 h-12 bg-brand-saffron/10 flex items-center justify-center text-brand-saffron rounded-full">
                       <item.icon size={24} />
                     </div>
                     <div>
@@ -98,17 +98,17 @@ const About = () => {
 
       {/* Vision & Mission */}
       <section className="py-20 bg-brand-dark text-brand-cream overflow-hidden relative">
-        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-gold to-brand-maroon" />
+        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-saffron to-brand-maroon" />
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <AnimatedSection className="bg-brand-olive/30 p-12 border border-brand-gold/20">
-              <h3 className="text-3xl font-playfair font-bold text-brand-gold mb-6 italic underline decoration-brand-gold/30 underline-offset-8">Our Vision</h3>
+            <AnimatedSection className="bg-brand-olive/30 p-12 border border-brand-saffron/20">
+              <h3 className="text-3xl font-playfair font-bold text-brand-saffron mb-6 italic underline decoration-brand-saffron/30 underline-offset-8">Our Vision</h3>
               <p className="text-xl leading-relaxed text-brand-cream/80">
                 To become the global standard for authentic organic food, where every household has access to the pure essence of nature, fostering a healthier and more sustainable world.
               </p>
             </AnimatedSection>
-            <AnimatedSection delay={0.2} className="bg-brand-olive/30 p-12 border border-brand-gold/20">
-              <h3 className="text-3xl font-playfair font-bold text-brand-gold mb-6 italic underline decoration-brand-gold/30 underline-offset-8">Our Mission</h3>
+            <AnimatedSection delay={0.2} className="bg-brand-olive/30 p-12 border border-brand-saffron/20">
+              <h3 className="text-3xl font-playfair font-bold text-brand-saffron mb-6 italic underline decoration-brand-saffron/30 underline-offset-8">Our Mission</h3>
               <p className="text-xl leading-relaxed text-brand-cream/80">
                 To empower local farmers, preserve traditional agricultural wisdom, and provide our customers with chemical-free, nutrient-rich products that nourish the body and soul.
               </p>
@@ -122,7 +122,7 @@ const About = () => {
         <div className="container-custom">
           <div className="text-center mb-20">
             <AnimatedSection>
-              <span className="text-brand-gold font-bold tracking-widest uppercase text-xs mb-4 block">Our Partners</span>
+              <span className="text-brand-saffron font-bold tracking-widest uppercase text-xs mb-4 block">Our Partners</span>
               <h2 className="text-4xl md:text-5xl font-playfair font-bold text-brand-dark italic">Empowering Local Farmers</h2>
               <p className="mt-6 text-brand-dark/60 max-w-2xl mx-auto text-lg">
                 We work directly with over 50+ traditional farming families, ensuring they get fair prices while you get the best products.

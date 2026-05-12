@@ -28,10 +28,10 @@ const Contact = () => {
     <div className="pt-14 bg-brand-cream min-h-screen">
       {/* Header */}
       <section className="py-20 bg-brand-dark text-brand-cream overflow-hidden relative">
-        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-gold to-brand-maroon" />
+        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-saffron to-brand-maroon" />
         <div className="container-custom relative z-10 px-6 text-center">
           <AnimatedSection>
-            <span className="text-brand-gold font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Connect With Us</span>
+            <span className="text-brand-saffron font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Connect With Us</span>
             <h1 className="text-5xl md:text-7xl font-playfair font-bold text-brand-cream mb-6">Get In Touch</h1>
             <p className="text-brand-cream/60 max-w-2xl mx-auto text-lg italic">
               Have questions about our products or farming practices? We'd love to hear from you.
@@ -43,15 +43,15 @@ const Contact = () => {
       <section className="section-padding">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            
+
             {/* Contact Info */}
             <div className="lg:col-span-1 space-y-12">
               <AnimatedSection>
                 <h2 className="text-3xl font-playfair font-bold text-brand-dark mb-10">Contact Details</h2>
-                
+
                 <div className="space-y-10">
                   <div className="flex items-start gap-6 group">
-                    <div className="w-12 h-12 bg-brand-gold/10 flex items-center justify-center text-brand-gold rounded-full group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-300">
+                    <div className="w-12 h-12 bg-brand-saffron/10 flex items-center justify-center text-brand-saffron rounded-full group-hover:bg-brand-saffron group-hover:text-brand-dark transition-all duration-300">
                       <MapPin size={24} />
                     </div>
                     <div>
@@ -61,7 +61,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-6 group">
-                    <div className="w-12 h-12 bg-brand-gold/10 flex items-center justify-center text-brand-gold rounded-full group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-300">
+                    <div className="w-12 h-12 bg-brand-saffron/10 flex items-center justify-center text-brand-saffron rounded-full group-hover:bg-brand-saffron group-hover:text-brand-dark transition-all duration-300">
                       <Phone size={24} />
                     </div>
                     <div>
@@ -72,7 +72,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-6 group">
-                    <div className="w-12 h-12 bg-brand-gold/10 flex items-center justify-center text-brand-gold rounded-full group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-300">
+                    <div className="w-12 h-12 bg-brand-saffron/10 flex items-center justify-center text-brand-saffron rounded-full group-hover:bg-brand-saffron group-hover:text-brand-dark transition-all duration-300">
                       <Mail size={24} />
                     </div>
                     <div>
@@ -88,7 +88,7 @@ const Contact = () => {
                 <h2 className="text-3xl font-playfair font-bold text-brand-dark mb-8">Follow Us</h2>
                 <div className="flex gap-6">
                   {[FacebookIcon, InstagramIcon, TwitterIcon].map((Icon, i) => (
-                    <a key={i} href="#" className="w-12 h-12 border border-brand-gold/30 flex items-center justify-center text-brand-gold rounded-full hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
+                    <a key={i} href="#" className="w-12 h-12 border border-brand-saffron/30 flex items-center justify-center text-brand-saffron rounded-full hover:bg-brand-saffron hover:text-brand-dark transition-all duration-300">
                       <Icon size={20} />
                     </a>
                   ))}
@@ -98,24 +98,24 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <AnimatedSection className="bg-white p-10 md:p-16 shadow-2xl rounded-sm border-t-8 border-brand-gold">
+              <AnimatedSection className="bg-white p-10 md:p-16 shadow-2xl rounded-sm border-t-8 border-brand-saffron">
                 <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-10 italic">Send a Message</h2>
                 <form className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Full Name</label>
-                      <input 
-                        type="text" 
-                        placeholder="Your Name" 
-                        className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-gold transition-colors text-brand-dark"
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark"
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Email Address</label>
-                      <input 
-                        type="email" 
-                        placeholder="example@mail.com" 
-                        className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-gold transition-colors text-brand-dark"
+                      <input
+                        type="email"
+                        placeholder="example@mail.com"
+                        className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark"
                       />
                     </div>
                   </div>
@@ -123,15 +123,15 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Phone Number</label>
-                      <input 
-                        type="tel" 
-                        placeholder="+91 00000 00000" 
-                        className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-gold transition-colors text-brand-dark"
+                      <input
+                        type="tel"
+                        placeholder="+91 00000 00000"
+                        className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark"
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Subject</label>
-                      <select className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-gold transition-colors text-brand-dark">
+                      <select className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark">
                         <option>Product Inquiry</option>
                         <option>Order Status</option>
                         <option>Farming Collaboration</option>
@@ -143,10 +143,10 @@ const Contact = () => {
 
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Your Message</label>
-                    <textarea 
-                      rows="6" 
-                      placeholder="Tell us how we can help you..." 
-                      className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-gold transition-colors text-brand-dark resize-none"
+                    <textarea
+                      rows="6"
+                      placeholder="Tell us how we can help you..."
+                      className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark resize-none"
                     ></textarea>
                   </div>
 
@@ -163,14 +163,14 @@ const Contact = () => {
       {/* Map Placeholder */}
       <section className="h-[500px] bg-brand-olive overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-1000">
         <div className="absolute inset-0 flex items-center justify-center">
-           <div className="text-center text-brand-gold">
-              <MapPin size={48} className="mx-auto mb-4 animate-bounce" />
-              <h3 className="text-2xl font-playfair italic">Visit Our Farm</h3>
-              <p className="text-brand-cream/60">Google Maps Integration Placeholder</p>
-           </div>
+          <div className="text-center text-brand-saffron">
+            <MapPin size={48} className="mx-auto mb-4 animate-bounce" />
+            <h3 className="text-2xl font-playfair italic">Visit Our Farm</h3>
+            <p className="text-brand-cream/60">Google Maps Integration Placeholder</p>
+          </div>
         </div>
-        <img 
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000" 
+        <img
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000"
           className="w-full h-full object-cover opacity-20"
           alt="Map context"
         />

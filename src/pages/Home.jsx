@@ -49,8 +49,8 @@ const Home = () => {
           >
             {/* Tag */}
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-              <span className="h-px w-8 bg-brand-gold" />
-              <span className="text-brand-gold text-xs font-bold tracking-[0.28em] uppercase">
+              <span className="h-px w-8 bg-brand-saffron" />
+              <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase">
                 Natural · Pure · Trusted
               </span>
             </motion.div>
@@ -62,7 +62,7 @@ const Home = () => {
                          text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
             >
               Taste the<br />
-              <span className="text-brand-gold italic">Purity</span> of
+              <span className="text-brand-saffron">Purity</span> of
               Nature.
             </motion.h1>
 
@@ -76,14 +76,14 @@ const Home = () => {
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
               <Link
                 to="/products"
-                className="inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-7 py-3 text-xs font-bold tracking-widest uppercase hover:bg-brand-saffron transition-colors duration-300 group"
+                className="inline-flex items-center gap-2 bg-brand-saffron text-brand-dark px-7 py-3 text-xs font-bold tracking-widest uppercase hover:bg-brand-saffron transition-colors duration-300 group"
               >
                 Shop Collection
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 border border-brand-cream/25 text-brand-cream/80 px-7 py-3 text-xs font-bold tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors duration-300"
+                className="inline-flex items-center gap-2 border border-brand-cream/25 text-brand-cream/80 px-7 py-3 text-xs font-bold tracking-widest uppercase hover:border-brand-saffron hover:text-brand-saffron transition-colors duration-300"
               >
                 Our Story
               </Link>
@@ -96,11 +96,11 @@ const Home = () => {
             >
               {[
                 { val: '100%', label: 'Natural' },
-                { val: '0',    label: 'Preservatives' },
-                { val: '16+',  label: 'Products' },
+                { val: '0', label: 'Preservatives' },
+                { val: '16+', label: 'Products' },
               ].map(({ val, label }) => (
                 <div key={label}>
-                  <p className="text-brand-gold font-playfair font-bold text-2xl md:text-3xl">{val}</p>
+                  <p className="text-brand-saffron font-playfair font-bold text-2xl md:text-3xl">{val}</p>
                   <p className="text-brand-cream/35 text-[10px] uppercase tracking-widest mt-0.5">{label}</p>
                 </div>
               ))}
@@ -146,8 +146,8 @@ const Home = () => {
                 title: 'Traditional Process',
                 desc: 'Wood pressed and sun-dried — preserving age-old methods that retain nutrients.',
                 accent: '#C8A96B', // gold
-                bg: 'from-brand-gold/10 to-transparent',
-                border: 'border-brand-gold/20 hover:border-brand-gold/60',
+                bg: 'from-brand-saffron/10 to-transparent',
+                border: 'border-brand-saffron/20 hover:border-brand-saffron/60',
               },
               {
                 icon: Users,
@@ -207,18 +207,18 @@ const Home = () => {
           {/* Header */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-14 gap-6">
             <AnimatedSection direction="left">
-              <span className="text-brand-gold text-xs font-bold tracking-[0.28em] uppercase mb-3 block">
+              <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase mb-3 block">
                 Handpicked For You
               </span>
               <h2 className="font-playfair font-bold text-brand-cream text-3xl sm:text-4xl md:text-5xl">
-                Our <span className="text-brand-gold italic">Collections</span>
+                Our <span className="text-brand-saffron italic">Collections</span>
               </h2>
-              <div className="h-px w-12 bg-brand-gold mt-4" />
+              <div className="h-px w-12 bg-brand-saffron mt-4" />
             </AnimatedSection>
             <AnimatedSection direction="right" delay={0.15}>
               <Link
                 to="/products"
-                className="group inline-flex items-center gap-2 text-brand-gold text-xs font-bold tracking-widest uppercase hover:text-brand-cream transition-colors"
+                className="group inline-flex items-center gap-2 text-brand-saffron text-xs font-bold tracking-widest uppercase hover:text-brand-cream transition-colors"
               >
                 View All Products
                 <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
@@ -251,11 +251,11 @@ const Home = () => {
                 />
               </div>
               {/* Corner decorations */}
-              <div className="absolute -bottom-4 -right-4 w-36 h-36 border border-brand-gold/25 pointer-events-none" />
+              <div className="absolute -bottom-4 -right-4 w-36 h-36 border border-brand-saffron/25 pointer-events-none" />
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-brand-saffron/8 pointer-events-none" />
               {/* Year badge */}
-              <div className="absolute bottom-6 -right-3 md:-right-6 bg-brand-dark text-brand-cream px-5 py-4 border-l-4 border-brand-gold">
-                <p className="text-brand-gold text-xl font-playfair font-bold">2024</p>
+              <div className="absolute bottom-6 -right-3 md:-right-6 bg-brand-dark text-brand-cream px-5 py-4 border-l-4 border-brand-saffron">
+                <p className="text-brand-saffron text-xl font-playfair font-bold">2024</p>
                 <p className="text-brand-cream/50 text-[10px] uppercase tracking-widest">Est. Year</p>
               </div>
             </AnimatedSection>
@@ -304,9 +304,9 @@ const Home = () => {
       <section className="py-20 md:py-28 bg-brand-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <AnimatedSection direction="up" className="text-center mb-14">
-            <span className="text-brand-gold text-xs font-bold tracking-[0.28em] uppercase mb-3 block">Happy Customers</span>
+            <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase mb-3 block">Happy Customers</span>
             <h2 className="font-playfair font-bold text-brand-cream text-3xl sm:text-4xl md:text-5xl">
-              What Our <span className="text-brand-gold italic">Community</span> Says
+              What Our <span className="text-brand-saffron italic">Community</span> Says
             </h2>
           </AnimatedSection>
 
@@ -317,13 +317,13 @@ const Home = () => {
                 direction={i === 0 ? 'left' : i === 2 ? 'right' : 'zoom'}
                 delay={i * 0.12}
               >
-                <div className="bg-brand-olive/30 border border-brand-cream/10 p-7 border-b-4 border-brand-gold hover:-translate-y-1 transition-transform duration-300 h-full">
-                  <div className="text-brand-gold/15 text-6xl font-playfair leading-none mb-4 select-none">"</div>
+                <div className="bg-brand-olive/30 border border-brand-cream/10 p-7 border-b-4 border-brand-saffron hover:-translate-y-1 transition-transform duration-300 h-full">
+                  <div className="text-brand-saffron/15 text-6xl font-playfair leading-none mb-4 select-none">"</div>
                   <p className="text-brand-cream/65 italic text-sm leading-relaxed mb-6">"{t.content}"</p>
                   <div className="flex items-center gap-4">
-                    <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-brand-gold/60" />
+                    <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-brand-saffron/60" />
                     <div>
-                      <p className="font-bold text-brand-gold text-sm">{t.name}</p>
+                      <p className="font-bold text-brand-saffron text-sm">{t.name}</p>
                       <p className="text-brand-cream/35 text-[10px] uppercase tracking-widest">{t.role}</p>
                     </div>
                   </div>
@@ -347,18 +347,18 @@ const Home = () => {
             <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase mb-5 block">Ready to Start?</span>
             <h2 className="font-playfair font-bold text-brand-cream text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-10">
               Experience Pure<br />
-              <span className="text-brand-gold italic">Organic Goodness</span>
+              <span className="text-brand-saffron italic">Organic Goodness</span>
             </h2>
             <div className="flex flex-wrap justify-center gap-5">
               <Link
                 to="/products"
-                className="px-10 py-3 bg-brand-gold text-brand-dark text-xs font-bold tracking-widest uppercase hover:bg-brand-saffron transition-colors duration-300"
+                className="px-10 py-3 bg-brand-saffron text-brand-dark text-xs font-bold tracking-widest uppercase hover:bg-brand-saffron transition-colors duration-300"
               >
                 Shop Now
               </Link>
               <Link
                 to="/contact"
-                className="px-10 py-3 border border-brand-cream/25 text-brand-cream text-xs font-bold tracking-widest uppercase hover:border-brand-gold hover:text-brand-gold transition-colors duration-300"
+                className="px-10 py-3 border border-brand-cream/25 text-brand-cream text-xs font-bold tracking-widest uppercase hover:border-brand-saffron hover:text-brand-saffron transition-colors duration-300"
               >
                 Contact Us
               </Link>

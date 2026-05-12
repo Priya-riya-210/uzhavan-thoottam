@@ -4,14 +4,14 @@ import { ShoppingCart, Eye } from 'lucide-react';
 
 // Category accent colors
 const catColors = {
-  Oils:         { dot: '#D4891A', label: 'bg-amber-50  text-amber-700  border-amber-200'  },
-  Sweeteners:   { dot: '#5C1A1A', label: 'bg-red-50    text-red-800    border-red-200'    },
-  Beverages:    { dot: '#1A4A2E', label: 'bg-green-50  text-green-800  border-green-200'  },
-  Spices:       { dot: '#B45309', label: 'bg-orange-50 text-orange-700 border-orange-200' },
+  Oils: { dot: '#D4891A', label: 'bg-amber-50  text-amber-700  border-amber-200' },
+  Sweeteners: { dot: '#5C1A1A', label: 'bg-red-50    text-red-800    border-red-200' },
+  Beverages: { dot: '#1A4A2E', label: 'bg-green-50  text-green-800  border-green-200' },
+  Spices: { dot: '#B45309', label: 'bg-orange-50 text-orange-700 border-orange-200' },
   'Dry Fruits': { dot: '#78350F', label: 'bg-yellow-50 text-yellow-800 border-yellow-200' },
-  Dairy:        { dot: '#4B5563', label: 'bg-gray-50   text-gray-700   border-gray-200'   },
-  Pickles:      { dot: '#991B1B', label: 'bg-rose-50   text-rose-800   border-rose-200'   },
-  Fresh:        { dot: '#15803D', label: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
+  Dairy: { dot: '#4B5563', label: 'bg-gray-50   text-gray-700   border-gray-200' },
+  Pickles: { dot: '#991B1B', label: 'bg-rose-50   text-rose-800   border-rose-200' },
+  Fresh: { dot: '#15803D', label: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
 };
 
 const ProductCard = ({ product, index = 0 }) => {
@@ -44,7 +44,7 @@ const ProductCard = ({ product, index = 0 }) => {
       style={{ rotateX: rotX, rotateY: rotY, transformStyle: 'preserve-3d', perspective: 900 }}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="group relative bg-white border border-gray-100 hover:border-brand-gold/25 overflow-hidden transition-colors duration-300 cursor-pointer"
+      className="group relative bg-white border border-gray-100 hover:border-brand-saffron/25 overflow-hidden transition-colors duration-300 cursor-pointer"
     >
       {/* Category color strip */}
       <div className="h-0.5 w-full flex-shrink-0" style={{ backgroundColor: cat.dot }} />
@@ -67,7 +67,7 @@ const ProductCard = ({ product, index = 0 }) => {
                         transition-opacity duration-300
                         hidden sm:flex">
           <button
-            className="w-10 h-10 bg-brand-gold text-brand-dark rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+            className="w-10 h-10 bg-brand-saffron text-brand-dark rounded-full flex items-center justify-center hover:scale-110 transition-transform"
             title="Add to cart"
           >
             <ShoppingCart size={15} />
@@ -110,7 +110,7 @@ const ProductCard = ({ product, index = 0 }) => {
           {/* Mobile: visible action buttons row (since no hover on touch) */}
           <div className="flex items-center gap-2 sm:hidden">
             <button
-              className="w-7 h-7 bg-brand-gold text-brand-dark rounded-full flex items-center justify-center"
+              className="w-7 h-7 bg-brand-saffron text-brand-dark rounded-full flex items-center justify-center"
               title="Add to cart"
             >
               <ShoppingCart size={12} />

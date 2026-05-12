@@ -28,7 +28,7 @@ const Gallery = () => {
       {/* ── Header ──────────────────────────── */}
       <section className="py-20 bg-brand-dark relative overflow-hidden">
         {/* Colorful left accent */}
-        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-gold to-brand-maroon" />
+        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-saffron to-brand-maroon" />
         {/* Dot texture */}
         <div
           className="absolute inset-0 opacity-[0.05] pointer-events-none"
@@ -64,8 +64,8 @@ const Gallery = () => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 className={`px-5 py-2 text-xs font-bold tracking-widest uppercase border transition-all duration-250 ${isActive
-                  ? 'bg-brand-dark text-brand-gold border-brand-dark'
-                  : 'bg-white text-brand-dark/55 border-brand-dark/10 hover:border-brand-gold/50 hover:text-brand-dark'
+                  ? 'bg-brand-dark text-brand-saffron border-brand-dark'
+                  : 'bg-white text-brand-dark/55 border-brand-dark/10 hover:border-brand-saffron/50 hover:text-brand-dark'
                   }`}
                 style={isActive && accent ? { backgroundColor: accent.bg, borderColor: accent.bg, color: '#F5E8CF' } : {}}
               >
@@ -162,7 +162,7 @@ const Gallery = () => {
               {/* Close */}
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 text-brand-cream/60 hover:text-brand-gold transition-colors"
+                className="absolute -top-12 right-0 text-brand-cream/60 hover:text-brand-saffron transition-colors"
               >
                 <X size={36} />
               </button>
@@ -206,7 +206,7 @@ const Gallery = () => {
             </p>
             <a
               href="#"
-              className="inline-flex items-center gap-3 border border-brand-gold/40 text-brand-gold px-10 py-3 text-xs font-bold tracking-widest uppercase hover:bg-brand-gold hover:text-brand-dark transition-all duration-300"
+              className="inline-flex items-center gap-3 border border-brand-saffron/40 text-brand-saffron px-10 py-3 text-xs font-bold tracking-widest uppercase hover:bg-brand-saffron hover:text-brand-dark transition-all duration-300"
             >
               Visit Instagram Profile
             </a>

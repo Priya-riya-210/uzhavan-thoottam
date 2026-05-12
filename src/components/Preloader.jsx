@@ -27,23 +27,23 @@ const Preloader = () => {
               transition={{ duration: 1, ease: "easeOut" }}
               className="mb-8 flex flex-col items-center"
             >
-              <img src={logo} alt="Uzhavan Thottam Logo" className="w-32 h-32 md:w-48 md:h-48 object-contain mb-4 rounded-full border-2 border-brand-gold p-2" />
-              <h1 className="text-4xl md:text-6xl font-playfair text-brand-gold tracking-widest uppercase">
+              <img src={logo} alt="Uzhavan Thottam Logo" className="w-32 h-32 md:w-48 md:h-48 object-contain mb-4 rounded-full border-2 border-brand-saffron p-2" />
+              <h1 className="text-4xl md:text-6xl font-playfair text-brand-saffron tracking-widest uppercase">
                 Uzhavan Thottam
               </h1>
-              <div className="h-px w-full bg-brand-gold mt-2 origin-left scale-x-0 animate-[grow_1.5s_ease-in-out_forwards]" />
+              <div className="h-px w-full bg-brand-saffron mt-2 origin-left scale-x-0 animate-[grow_1.5s_ease-in-out_forwards]" />
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ width: 0 }}
               animate={{ width: "200px" }}
               transition={{ duration: 2, ease: "easeInOut" }}
-              className="h-0.5 bg-brand-gold/30 relative overflow-hidden"
+              className="h-0.5 bg-brand-saffron/30 relative overflow-hidden"
             >
-              <motion.div 
+              <motion.div
                 animate={{ x: ["-100%", "100%"] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 bg-brand-gold"
+                className="absolute inset-0 bg-brand-saffron"
               />
             </motion.div>
           </div>

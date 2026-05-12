@@ -48,7 +48,7 @@ const Footer = () => {
   return (
     <footer className="bg-brand-dark text-brand-cream relative overflow-hidden">
       {/* Top maroon/saffron accent strip */}
-      <div className="h-1 w-full bg-gradient-to-r from-brand-maroon via-brand-saffron to-brand-gold" />
+      <div className="h-1 w-full bg-gradient-to-r from-brand-maroon via-brand-saffron to-brand-saffron" />
 
       {/* Subtle dot pattern bg */}
       <div
@@ -64,9 +64,9 @@ const Footer = () => {
             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-block">
               <h2 className="text-2xl font-playfair font-bold tracking-tight">
                 <span className="text-brand-saffron">UZHAVAN</span>{' '}
-                <span className="text-brand-cream italic">THOTTAM</span>
+                <span className="text-brand-cream">THOTTAM</span>
               </h2>
-              <p className="text-brand-gold/60 text-[10px] tracking-[0.3em] uppercase mt-1">Natural · Pure · Trusted</p>
+              <p className="text-brand-saffron/60 text-[10px] tracking-[0.3em] uppercase mt-1">Natural · Pure · Trusted</p>
             </Link>
             <p className="text-brand-cream/50 leading-relaxed text-sm max-w-xs">
               Bringing the pure essence of nature from the farm to your table.
@@ -94,11 +94,11 @@ const Footer = () => {
             </h3>
             <ul className="space-y-5">
               {[
-                { label: 'Home',     to: '/'         },
-                { label: 'About',    to: '/about'    },
+                { label: 'Home', to: '/' },
+                { label: 'About', to: '/about' },
                 { label: 'Products', to: '/products' },
-                { label: 'Gallery',  to: '/gallery'  },
-                { label: 'Contact',  to: '/contact'  },
+                { label: 'Gallery', to: '/gallery' },
+                { label: 'Contact', to: '/contact' },
               ].map(({ label, to }) => (
                 <li key={label}>
                   <FooterLink to={to}>{label}</FooterLink>

@@ -28,7 +28,7 @@ const Products = () => {
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{ backgroundImage: 'radial-gradient(circle, #C8A96B 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}
         />
-        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-gold to-brand-maroon" />
+        <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-saffron to-brand-maroon" />
         <div className="container-custom relative z-10 px-6 text-center">
           <AnimatedSection>
             <span className="text-brand-saffron font-bold tracking-[0.28em] uppercase text-xs mb-4 block">Our Collection</span>
@@ -50,8 +50,8 @@ const Products = () => {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`px-5 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-250 border ${activeCategory === category
-                  ? 'bg-brand-dark text-brand-gold border-brand-dark'
-                  : 'bg-white text-brand-dark/55 border-brand-dark/8 hover:border-brand-gold/50 hover:text-brand-dark'
+                  ? 'bg-brand-dark text-brand-saffron border-brand-dark'
+                  : 'bg-white text-brand-dark/55 border-brand-dark/8 hover:border-brand-saffron/50 hover:text-brand-dark'
                   }`}
                 type="button"
               >
@@ -67,7 +67,7 @@ const Products = () => {
               placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-brand-dark/10 px-5 py-2.5 pl-11 text-sm focus:outline-none focus:border-brand-gold transition-colors"
+              className="w-full bg-white border border-brand-dark/10 px-5 py-2.5 pl-11 text-sm focus:outline-none focus:border-brand-saffron transition-colors"
             />
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-dark/35" size={16} />
           </div>
@@ -123,7 +123,7 @@ const Products = () => {
               </div>
 
               <div className="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
-                <span className="text-brand-gold font-bold tracking-[0.2em] uppercase text-xs mb-4 block">{selectedProduct.category}</span>
+                <span className="text-brand-saffron font-bold tracking-[0.2em] uppercase text-xs mb-4 block">{selectedProduct.category}</span>
                 <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-6">{selectedProduct.name}</h2>
                 <p className="text-3xl text-brand-brown font-bold mb-8">{selectedProduct.price}</p>
                 <div className="h-px w-full bg-brand-dark/10 mb-8" />
@@ -143,7 +143,7 @@ const Products = () => {
                     <span className="w-2 h-2 bg-green-500 rounded-full mr-3" /> In Stock & Ready to Ship
                   </p>
                   <p className="text-xs text-brand-dark/40 uppercase tracking-widest flex items-center">
-                    <span className="w-2 h-2 bg-brand-gold rounded-full mr-3" /> Free Delivery on orders above ₹999
+                    <span className="w-2 h-2 bg-brand-saffron rounded-full mr-3" /> Free Delivery on orders above ₹999
                   </p>
                 </div>
               </div>
