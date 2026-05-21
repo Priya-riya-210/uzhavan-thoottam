@@ -50,25 +50,33 @@ const Contact = () => {
                 <h2 className="text-3xl font-playfair font-bold text-brand-dark mb-10">Contact Details</h2>
 
                 <div className="space-y-10">
-                  <div className="flex items-start gap-6 group">
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Kangayampalayam,+Kuppam,+Karur,+Tamil+Nadu+639111"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-6 group cursor-pointer"
+                  >
                     <div className="w-12 h-12 bg-brand-saffron/10 flex items-center justify-center text-brand-saffron rounded-full group-hover:bg-brand-saffron group-hover:text-brand-dark transition-all duration-300">
                       <MapPin size={24} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm">Location</h3>
-                      <p className="text-brand-dark/60 leading-relaxed">4/47 Kangayampalayam, Kuppam (po), <br />Karur (dt), Pin code : 639111</p>
+                      <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm group-hover:text-brand-saffron transition-colors">Location</h3>
+                      <p className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors">4/47 Kangayampalayam, Kuppam (po), <br />Karur (dt), Pin code : 639111</p>
                     </div>
-                  </div>
+                  </a>
 
-                  <div className="flex items-start gap-6 group">
+                  <a 
+                    href="tel:+916385172761"
+                    className="flex items-start gap-6 group cursor-pointer"
+                  >
                     <div className="w-12 h-12 bg-brand-saffron/10 flex items-center justify-center text-brand-saffron rounded-full group-hover:bg-brand-saffron group-hover:text-brand-dark transition-all duration-300">
                       <Phone size={24} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm">Call Us</h3>
-                      <p className="text-brand-dark/60 leading-relaxed">+91 63851 72761</p>
+                      <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm group-hover:text-brand-saffron transition-colors">Call Us</h3>
+                      <p className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors">+91 63851 72761</p>
                     </div>
-                  </div>
+                  </a>
 
                   <div className="flex items-start gap-6 group">
                     <div className="w-12 h-12 bg-brand-saffron/10 flex items-center justify-center text-brand-saffron rounded-full group-hover:bg-brand-saffron group-hover:text-brand-dark transition-all duration-300">
@@ -76,8 +84,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm">Email Us</h3>
-                      <p className="text-brand-dark/60 leading-relaxed">hello@uzhavanthottam.com</p>
-                      <p className="text-brand-dark/60 leading-relaxed">support@uzhavanthottam.com</p>
+                      <a href="mailto:hello@uzhavanthottam.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">hello@uzhavanthottam.com</a>
+                      <a href="mailto:support@uzhavanthottam.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">support@uzhavanthottam.com</a>
                     </div>
                   </div>
                 </div>
@@ -87,7 +95,7 @@ const Contact = () => {
                 <h2 className="text-3xl font-playfair font-bold text-brand-dark mb-8">Follow Us</h2>
                 <div className="flex gap-6">
                   {[
-                    { Icon: FacebookIcon, href: 'https://www.facebook.com/Uzhavanthottam' },
+                    { Icon: FacebookIcon, href: 'https://www.facebook.com/share/1JDS1XyDC3/' },
                     { Icon: InstagramIcon, href: 'https://www.instagram.com/Uzhavan_2026' },
                     { Icon: TwitterIcon, href: '#' }
                   ].map(({ Icon, href }, i) => (
@@ -164,20 +172,25 @@ const Contact = () => {
       </section>
 
       {/* Map Placeholder */}
-      <section className="h-[500px] bg-brand-olive overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-1000">
-        <div className="absolute inset-0 flex items-center justify-center">
+      <a 
+        href="https://www.google.com/maps/search/?api=1&query=Kangayampalayam,+Kuppam,+Karur,+Tamil+Nadu+639111"
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block h-[500px] bg-brand-olive overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-1000 group"
+      >
+        <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="text-center text-brand-saffron">
             <MapPin size={48} className="mx-auto mb-4 animate-bounce" />
-            <h3 className="text-2xl font-playfair italic">Visit Our Farm</h3>
-            <p className="text-brand-cream/60">Google Maps Integration Placeholder</p>
+            <h3 className="text-2xl font-playfair italic group-hover:scale-105 transition-transform duration-300">Visit Our Farm</h3>
+            <p className="text-brand-cream/60 text-xs tracking-widest uppercase mt-2">Click to open in Google Maps</p>
           </div>
         </div>
         <img
           src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-20 transition-transform duration-700 group-hover:scale-105"
           alt="Map context"
         />
-      </section>
+      </a>
     </div>
   );
 };

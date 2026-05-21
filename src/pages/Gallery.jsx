@@ -4,7 +4,7 @@ import { X, ZoomIn } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import { galleryImages } from '../data/mockData';
 
-const categories = ['All', 'Farm', 'Harvest', 'Process', 'Products'];
+const categories = ['All', 'Harvest', 'Process', 'Products'];
 
 // Vibrant category accent colors
 const catAccent = {
@@ -91,7 +91,7 @@ const Gallery = () => {
                 const accent = catAccent[img.category] || catAccent.Farm;
                 return (
                   <motion.div
-                    key={img.src}
+                    key={`${img.src}-${img.category}-${idx}`}
                     layout
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}

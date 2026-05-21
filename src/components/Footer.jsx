@@ -76,7 +76,7 @@ const Footer = () => {
             {/* Social icons */}
             <div className="flex space-x-3 pt-2">
               {[
-                { Icon: FacebookIcon, href: 'https://www.facebook.com/Uzhavanthottam' },
+                { Icon: FacebookIcon, href: 'https://www.facebook.com/share/1JDS1XyDC3/' },
                 { Icon: InstagramIcon, href: 'https://www.instagram.com/Uzhavan_2026' },
                 { Icon: TwitterIcon, href: '#' }
               ].map(({ Icon, href }, i) => (
@@ -139,26 +139,37 @@ const Footer = () => {
               Get in Touch
             </h3>
             <div className="space-y-5">
-              <div className="flex items-start gap-4 group">
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Kangayampalayam,+Kuppam,+Karur,+Tamil+Nadu+639111"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 group cursor-pointer"
+              >
                 <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
                   <MapPin className="text-brand-saffron" size={16} />
                 </div>
-                <p className="text-brand-cream/50 text-sm leading-relaxed">
+                <p className="text-brand-cream/50 text-sm leading-relaxed hover:text-brand-saffron transition-colors">
                   4/47 Kangayampalayam, Kuppam (po),<br />Karur (dt), Pin code : 639111
                 </p>
-              </div>
-              <div className="flex items-center gap-4 group">
+              </a>
+              <a 
+                href="tel:+916385172761"
+                className="flex items-center gap-4 group cursor-pointer"
+              >
                 <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
                   <Phone className="text-brand-saffron" size={16} />
                 </div>
-                <p className="text-brand-cream/50 text-sm">+91 63851 72761</p>
-              </div>
-              <div className="flex items-center gap-4 group">
+                <p className="text-brand-cream/50 text-sm hover:text-brand-saffron transition-colors">+91 63851 72761</p>
+              </a>
+              <a 
+                href="mailto:info@uzhavanthottam.com"
+                className="flex items-center gap-4 group cursor-pointer"
+              >
                 <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
                   <Mail className="text-brand-saffron" size={16} />
                 </div>
-                <p className="text-brand-cream/50 text-sm">info@uzhavanthottam.com</p>
-              </div>
+                <p className="text-brand-cream/50 text-sm hover:text-brand-saffron transition-colors">info@uzhavanthottam.com</p>
+              </a>
             </div>
           </div>
         </div>

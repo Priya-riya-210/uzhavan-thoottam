@@ -343,22 +343,19 @@ export const products = [
 ];
 
 export const galleryImages = [
-  { src: coconutOil, label: 'Our Pure Coconut Oil', category: 'Products' },
+  // Dynamically map all products to show in 'Products' and 'All'
+  ...products.map(p => ({ src: p.image, label: p.name, category: 'Products' })),
+
+  // Handpicked Process & Harvest behind-the-scenes images
   { src: groundnutOil, label: 'Traditional Processing', category: 'Process' },
   { src: honey, label: 'Forest Harvested Honey', category: 'Harvest' },
-  { src: ghee, label: 'Pure Cow Ghee', category: 'Products' },
   { src: turmericPowder, label: 'Organic Turmeric', category: 'Harvest' },
-  { src: cardamom, label: 'Spice Collection', category: 'Products' },
-  { src: badam, label: 'Premium Dry Fruits', category: 'Products' },
-  { src: cashew, label: 'Quality Selection', category: 'Products' },
   { src: tenderCoconut, label: 'Farm Fresh Harvest', category: 'Harvest' },
   { src: butter, label: 'Traditional Churning', category: 'Process' },
   { src: coffeePower, label: 'Fresh Coffee Roasting', category: 'Process' },
   { src: teaPowder, label: 'Hill Garden Tea', category: 'Harvest' },
   { src: pepper, label: 'Sun-dried Spices', category: 'Process' },
   { src: karupatti, label: 'Palm Jaggery Making', category: 'Process' },
-  { src: countrySugar, label: 'Natural Sweeteners', category: 'Products' },
-  { src: poonduPickle, label: 'Authentic Pickles', category: 'Products' },
 ];
 
 export const testimonials = [

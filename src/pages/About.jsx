@@ -3,6 +3,9 @@ import { Leaf, Award, Sprout } from 'lucide-react';
 import farmingMethods from '../assets/Types_and_Methods_of_Organic_Farming.webp';
 import nutsImg from '../assets/about/nuts-image.webp';
 import coffeeBeansImg from '../assets/about/Coffee-beans.webp';
+import img1 from '../assets/about/img-1.webp';
+import sugarCaneImg from '../assets/product-images/sugar-cane-img.webp';
+import img3 from '../assets/about/img-3.webp';
 
 const About = () => {
   return (
@@ -134,9 +137,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
             {[
-              "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
-              "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800",
-              "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=800"
+              img1, sugarCaneImg, img3
             ].map((img, i) => (
               <AnimatedSection key={i} delay={i * 0.1} className="overflow-hidden group">
                 <img src={img} alt="Farmer" className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-700" />
