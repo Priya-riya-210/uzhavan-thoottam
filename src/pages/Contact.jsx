@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import React from 'react';
+import React, { useState } from 'react';
 
 // Social icons (not available in installed lucide-react version)
 const FacebookIcon = ({ size = 20 }) => (
@@ -24,6 +24,78 @@ const TwitterIcon = ({ size = 20 }) => (
 import AnimatedSection from '../components/AnimatedSection';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: 'Product Inquiry',
+    message: '',
+  });
+
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null },
+  });
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({
+      submitted: false,
+      submitting: true,
+      info: { error: false, msg: null },
+    });
+
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/dhanapriya210@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success === "true") {
+        setStatus({
+          submitted: true,
+          submitting: false,
+          info: {
+            error: false,
+            msg: "Your message has been sent successfully! If this is the first submission, please click the activation/verification link sent to your email inbox.",
+          },
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: 'Product Inquiry',
+          message: '',
+        });
+      } else {
+        setStatus({
+          submitted: false,
+          submitting: false,
+          info: { error: true, msg: data.message || "Failed to send message. Please try again." },
+        });
+      }
+    } catch (err) {
+      setStatus({
+        submitted: false,
+        submitting: false,
+        info: { error: true, msg: "An error occurred while sending the message. Please try again later." },
+      });
+    }
+  };
+
   return (
     <div className="pt-14 bg-brand-cream min-h-screen">
       {/* Header */}
@@ -84,8 +156,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm">Email Us</h3>
-                      <a href="mailto:hello@uzhavanthottam.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">hello@uzhavanthottam.com</a>
-                      <a href="mailto:support@uzhavanthottam.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">support@uzhavanthottam.com</a>
+                      <a href="mailto:dhanapriya210@gmail.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">dhanapriya210@gmail.com</a>
                     </div>
                   </div>
                 </div>
@@ -111,12 +182,26 @@ const Contact = () => {
             <div className="lg:col-span-2">
               <AnimatedSection className="bg-white p-10 md:p-16 shadow-2xl rounded-sm border-t-8 border-brand-saffron">
                 <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-10 italic">Send a Message</h2>
-                <form className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  {status.info.msg && (
+                    <div className={`p-4 rounded-sm text-sm font-semibold transition-all duration-300 ${
+                      status.info.error 
+                        ? 'bg-red-500/10 border border-red-500/20 text-red-500' 
+                        : 'bg-green-700/10 border border-green-500/20 text-green-700'
+                    }`}>
+                      {status.info.msg}
+                    </div>
+                  )}
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Full Name</label>
                       <input
                         type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
                         placeholder="Your Name"
                         className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark"
                       />
@@ -125,6 +210,10 @@ const Contact = () => {
                       <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Email Address</label>
                       <input
                         type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
                         placeholder="example@mail.com"
                         className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark"
                       />
@@ -136,18 +225,27 @@ const Contact = () => {
                       <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Phone Number</label>
                       <input
                         type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        required
                         placeholder="+91 00000 00000"
                         className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark"
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Subject</label>
-                      <select className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark">
-                        <option>Product Inquiry</option>
-                        <option>Order Status</option>
-                        <option>Farming Collaboration</option>
-                        <option>Bulk Orders</option>
-                        <option>Others</option>
+                      <select
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark"
+                      >
+                        <option value="Product Inquiry">Product Inquiry</option>
+                        <option value="Order Status">Order Status</option>
+                        <option value="Farming Collaboration">Farming Collaboration</option>
+                        <option value="Bulk Orders">Bulk Orders</option>
+                        <option value="Others">Others</option>
                       </select>
                     </div>
                   </div>
@@ -156,13 +254,22 @@ const Contact = () => {
                     <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/40 ml-1">Your Message</label>
                     <textarea
                       rows="6"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                       placeholder="Tell us how we can help you..."
                       className="w-full bg-brand-cream/30 border-b-2 border-brand-dark/10 px-4 py-4 focus:outline-none focus:border-brand-saffron transition-colors text-brand-dark resize-none"
                     ></textarea>
                   </div>
 
-                  <button className="btn-primary w-full sm:w-auto px-12 py-5 flex items-center justify-center group" type="button">
-                    Send Message <Send className="ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={18} />
+                  <button
+                    className="btn-primary w-full sm:w-auto px-12 py-5 flex items-center justify-center group disabled:opacity-50"
+                    type="submit"
+                    disabled={status.submitting}
+                  >
+                    {status.submitting ? 'Sending...' : 'Send Message'}
+                    {!status.submitting && <Send className="ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={18} />}
                   </button>
                 </form>
               </AnimatedSection>

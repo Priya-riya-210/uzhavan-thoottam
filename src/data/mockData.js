@@ -32,6 +32,9 @@ import poonduPodi from '../assets/product-images/images/poondu-podi.webp';
 import sesameOil from '../assets/product-images/images/sesame-oil.webp';
 import teaPowder from '../assets/product-images/images/tea-powder.webp';
 import turmericPowder from '../assets/product-images/images/turmeric-powder.webp';
+import profile1 from '../assets/testimonial/profile-1.webp';
+import profile4 from '../assets/testimonial/profile-4.webp';
+import profile5 from '../assets/testimonial/profile-5.webp';
 
 export const products = [
   {
@@ -361,23 +364,23 @@ export const galleryImages = [
 export const testimonials = [
   {
     id: 1,
-    name: 'Ananya Iyer',
-    role: 'Health Enthusiast',
+    name: 'Shailesh',
+    role: '',
     content: 'The wood pressed coconut oil from Uzhavan Thottam is exceptional. You can literally smell the purity!',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200',
+    image: profile1,
   },
   {
     id: 2,
-    name: 'Rajesh Kumar',
-    role: 'Home Chef',
+    name: 'Naveen',
+    role: '',
     content: 'The spices are so vibrant and full of flavor. It has completely transformed my daily cooking.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
+    image: profile4,
   },
   {
     id: 3,
-    name: 'Meera Reddy',
-    role: 'Nutritionist',
+    name: 'Yuva',
+    role: '',
     content: 'Authentic karupatti is hard to find these days. So glad I discovered Uzhavan Thottam!',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200',
+    image: profile5,
   },
 ];
