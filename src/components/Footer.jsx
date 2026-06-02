@@ -162,13 +162,13 @@ const Footer = () => {
                 <p className="text-brand-cream/50 text-sm hover:text-brand-saffron transition-colors">+91 63851 72761</p>
               </a>
               <a 
-                href="mailto:dhanapriya210@gmail.com"
+                href="mailto:info@uzhavanthottam.com"
                 className="flex items-center gap-4 group cursor-pointer"
               >
                 <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
                   <Mail className="text-brand-saffron" size={16} />
                 </div>
-                <p className="text-brand-cream/50 text-sm hover:text-brand-saffron transition-colors">dhanapriya210@gmail.com</p>
+                <p className="text-brand-cream/50 text-sm hover:text-brand-saffron transition-colors">info@uzhavanthottam.com</p>
               </a>
             </div>
           </div>

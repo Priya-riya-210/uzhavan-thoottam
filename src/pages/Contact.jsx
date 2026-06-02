@@ -156,7 +156,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm">Email Us</h3>
-                      <a href="mailto:dhanapriya210@gmail.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">dhanapriya210@gmail.com</a>
+                      <a href="mailto:hello@uzhavanthottam.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">hello@uzhavanthottam.com</a>
+                      <a href="mailto:support@uzhavanthottam.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">support@uzhavanthottam.com</a>
                     </div>
                   </div>
                 </div>
