@@ -7,7 +7,15 @@ import img1 from '../assets/about/img-1.webp';
 import sugarCaneImg from '../assets/product-images/sugar-cane-img.webp';
 import img3 from '../assets/about/img-3.webp';
 
+import useDocumentMetadata from '../hooks/useDocumentMetadata';
+
 const About = () => {
+  useDocumentMetadata({
+    title: 'Our Story & Legacy',
+    description: 'Learn about Uzhavan Thottam\'s legacy. We are rooted in tradition, grown with love, and committed to bringing wood-pressed oils, natural sweeteners, and organic foods from local farmers to your home.',
+    keywords: 'traditional farming legacy, about Uzhavan Thottam, wood pressed oils process, organic philosophy, local farmers empowerment'
+  });
+
   return (
     <div className="pt-14 bg-brand-cream">
       {/* Page Header */}
@@ -34,7 +42,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
             <AnimatedSection>
-              <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-8 leading-tight italic">Rooted in Tradition, Grown with Love.</h2>
+              <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-8 leading-tight">Rooted in Tradition, Grown with Love.</h2>
               <p className="text-brand-dark/70 text-lg leading-relaxed mb-6">
                 Uzhavan Thottam was founded with a single mission: to bring back the authentic, nutrient-rich foods that our grandparents once enjoyed. In a world of processed and chemically enhanced food, we stand for purity.
               </p>
@@ -51,7 +59,7 @@ const About = () => {
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 bg-brand-saffron p-8 shadow-xl hidden md:block">
-                <p className="text-brand-dark font-playfair font-bold text-2xl italic">"Pure from the Soil"</p>
+                <p className="text-brand-dark font-playfair font-bold text-2xl">"Pure from the Soil"</p>
               </div>
             </AnimatedSection>
           </div>
@@ -67,7 +75,7 @@ const About = () => {
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2} className="order-1 lg:order-2">
-              <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-8 leading-tight italic">Our Philosophy</h2>
+              <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-8 leading-tight">Our Philosophy</h2>
               <div className="space-y-8">
                 {[
                   { title: "Organic Farming", desc: "We believe in the power of nature. No synthetic fertilizers or pesticides are ever used on our partner farms.", icon: Sprout },
@@ -107,13 +115,13 @@ const About = () => {
         <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <AnimatedSection className="bg-brand-olive/30 p-12 border border-brand-saffron/20">
-              <h3 className="text-3xl font-playfair font-bold text-brand-saffron mb-6 italic underline decoration-brand-saffron/30 underline-offset-8">Our Vision</h3>
+              <h3 className="text-3xl font-playfair font-bold text-brand-saffron mb-6 underline decoration-brand-saffron/30 underline-offset-8">Our Vision</h3>
               <p className="text-xl leading-relaxed text-brand-cream/80">
                 To become the global standard for authentic organic food, where every household has access to the pure essence of nature, fostering a healthier and more sustainable world.
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.2} className="bg-brand-olive/30 p-12 border border-brand-saffron/20">
-              <h3 className="text-3xl font-playfair font-bold text-brand-saffron mb-6 italic underline decoration-brand-saffron/30 underline-offset-8">Our Mission</h3>
+              <h3 className="text-3xl font-playfair font-bold text-brand-saffron mb-6 underline decoration-brand-saffron/30 underline-offset-8">Our Mission</h3>
               <p className="text-xl leading-relaxed text-brand-cream/80">
                 To empower local farmers, preserve traditional agricultural wisdom, and provide our customers with chemical-free, nutrient-rich products that nourish the body and soul.
               </p>
@@ -128,7 +136,7 @@ const About = () => {
           <div className="text-center mb-20">
             <AnimatedSection>
               <span className="text-brand-saffron font-bold tracking-widest uppercase text-xs mb-4 block">Our Partners</span>
-              <h2 className="text-4xl md:text-5xl font-playfair font-bold text-brand-dark italic">Empowering Local Farmers</h2>
+              <h2 className="text-4xl md:text-5xl font-playfair font-bold text-brand-dark">Empowering Local Farmers</h2>
               <p className="mt-6 text-brand-dark/60 max-w-2xl mx-auto text-lg">
                 We work directly with over 50+ traditional farming families, ensuring they get fair prices while you get the best products.
               </p>
@@ -140,7 +148,7 @@ const About = () => {
               img1, sugarCaneImg, img3
             ].map((img, i) => (
               <AnimatedSection key={i} delay={i * 0.1} className="overflow-hidden group">
-                <img src={img} alt="Farmer" className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <img src={img} alt="Farmer" className="w-full h-80 object-cover lg:grayscale lg:hover:grayscale-0 transition-all duration-700" />
               </AnimatedSection>
             ))}
           </div>

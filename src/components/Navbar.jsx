@@ -59,7 +59,7 @@ const Navbar = () => {
               <button
                 key={link.name}
                 onClick={() => handleNav(link.path)}
-                className={`relative text-xs font-semibold tracking-[0.18em] uppercase transition-colors duration-300 focus:outline-none pb-1 ${isActive ? 'text-brand-saffron' : 'text-brand-cream/65 hover:text-brand-saffron'
+                className={`relative text-xs font-semibold tracking-[0.18em] uppercase transition-colors duration-300 focus:outline-none pb-1 ${isActive ? 'text-brand-saffron' : 'text-brand-cream/90 hover:text-brand-saffron'
                   }`}
               >
                 {link.name}
@@ -112,7 +112,7 @@ const Navbar = () => {
               {/* Header */}
               <div className="flex items-center justify-between px-8 py-6 border-b border-brand-saffron/10">
                 <span className="font-playfair text-brand-saffron font-bold">Menu</span>
-                <button onClick={() => setIsMobileMenuOpen(false)} className="text-brand-cream/60 hover:text-brand-saffron">
+                <button onClick={() => setIsMobileMenuOpen(false)} className="text-brand-cream/90 hover:text-brand-saffron">
                   <X size={24} />
                 </button>
               </div>
@@ -128,7 +128,7 @@ const Navbar = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.06 }}
                       onClick={() => handleNav(link.path)}
-                      className={`text-left py-4 border-b border-brand-cream/5 font-playfair text-xl tracking-wide transition-colors ${isActive ? 'text-brand-saffron' : 'text-brand-cream/70 hover:text-brand-saffron'
+                      className={`text-left py-4 border-b border-brand-cream/5 font-playfair text-xl tracking-wide transition-colors ${isActive ? 'text-brand-saffron' : 'text-brand-cream/90 hover:text-brand-saffron'
                         }`}
                     >
                       {link.name}

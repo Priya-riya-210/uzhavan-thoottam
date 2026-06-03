@@ -36,7 +36,7 @@ const FooterLink = ({ to, children }) => {
     <a
       href={to}
       onClick={handleClick}
-      className="group relative text-brand-cream/60 hover:text-brand-saffron transition-colors duration-300 inline-flex items-center gap-2 text-sm"
+      className="group relative text-brand-cream/90 hover:text-brand-saffron transition-colors duration-300 inline-flex items-center gap-2 text-sm"
     >
       <span className="w-0 group-hover:w-3 h-px bg-brand-saffron transition-all duration-300 inline-block" />
       {children}
@@ -68,7 +68,7 @@ const Footer = () => {
               </h2>
               <p className="text-brand-saffron/60 text-[10px] tracking-[0.3em] uppercase mt-1">Natural · Pure · Trusted</p>
             </Link>
-            <p className="text-brand-cream/50 leading-relaxed text-sm max-w-xs">
+            <p className="text-brand-cream/90 leading-relaxed text-sm max-w-xs">
               Bringing the pure essence of nature from the farm to your table.
               Sustainable, organic, and authentically crafted.
             </p>
@@ -85,7 +85,7 @@ const Footer = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-sm border border-brand-cream/10 flex items-center justify-center text-brand-cream/40 hover:border-brand-saffron hover:text-brand-saffron hover:bg-brand-saffron/10 transition-all duration-300"
+                  className="w-9 h-9 rounded-sm border border-brand-cream/10 flex items-center justify-center text-brand-cream/90 hover:border-brand-saffron hover:text-brand-saffron hover:bg-brand-saffron/10 transition-all duration-300"
                 >
                   <Icon size={16} />
                 </a>
@@ -148,7 +148,7 @@ const Footer = () => {
                 <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
                   <MapPin className="text-brand-saffron" size={16} />
                 </div>
-                <p className="text-brand-cream/50 text-sm leading-relaxed hover:text-brand-saffron transition-colors">
+                <p className="text-brand-cream/90 text-sm leading-relaxed hover:text-brand-saffron transition-colors">
                   4/47 Kangayampalayam, Kuppam (po),<br />Karur (dt), Pin code : 639111
                 </p>
               </a>
@@ -159,16 +159,16 @@ const Footer = () => {
                 <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
                   <Phone className="text-brand-saffron" size={16} />
                 </div>
-                <p className="text-brand-cream/50 text-sm hover:text-brand-saffron transition-colors">+91 63851 72761</p>
+                <p className="text-brand-cream/90 text-sm hover:text-brand-saffron transition-colors">+91 63851 72761</p>
               </a>
               <a 
-                href="mailto:info@uzhavanthottam.com"
+                href="mailto:uzhavanthottam26@gmail.com"
                 className="flex items-center gap-4 group cursor-pointer"
               >
                 <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center border border-brand-saffron/20 group-hover:border-brand-saffron group-hover:bg-brand-saffron/10 transition-all duration-300">
                   <Mail className="text-brand-saffron" size={16} />
                 </div>
-                <p className="text-brand-cream/50 text-sm hover:text-brand-saffron transition-colors">info@uzhavanthottam.com</p>
+                <p className="text-brand-cream/90 text-sm hover:text-brand-saffron transition-colors">uzhavanthottam26@gmail.com</p>
               </a>
             </div>
           </div>
@@ -176,10 +176,10 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-brand-cream/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-brand-cream/25 text-xs tracking-widest uppercase">
+          <p className="text-brand-cream/90 text-xs tracking-widest uppercase">
             © {new Date().getFullYear()} Uzhavan Thottam. All Rights Reserved.
           </p>
-          <p className="text-brand-cream/20 text-xs">
+          <p className="text-brand-cream/90 text-xs">
             Natural · Pure · Trusted
           </p>
         </div>

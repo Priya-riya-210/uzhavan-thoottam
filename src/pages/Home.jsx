@@ -17,7 +17,15 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
 };
 
+import useDocumentMetadata from '../hooks/useDocumentMetadata';
+
 const Home = () => {
+  useDocumentMetadata({
+    title: 'Pure & Organic Foods Direct From Farmers',
+    description: 'Welcome to Uzhavan Thottam. We offer farm-fresh, chemical-free, traditionally crafted organic products delivered straight to your door. Pure, natural, and trusted.',
+    keywords: 'organic food, farm fresh, chemical-free products, wood pressed oil, natural sweeteners, traditional farming, Uzhavan Thottam'
+  });
+
   const featuredProducts = products.slice(0, 8);
 
   return (
@@ -26,22 +34,20 @@ const Home = () => {
       {/* ══════════════════════════════════════
           HERO — dark green, no blur overlay
       ══════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center bg-brand-dark overflow-hidden">
-        {/* Brand product image — right side only */}
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[55%] z-0">
+      <section className="relative min-h-[auto] lg:min-h-screen flex flex-col lg:flex-row lg:items-center bg-brand-dark overflow-hidden">
+        {/* Brand product image */}
+        <div className="relative lg:absolute lg:inset-y-0 lg:right-0 w-full lg:w-[55%] h-[350px] sm:h-[450px] lg:h-full z-10 lg:z-0">
           <img
             src={heroImg}
             alt="Uzhavan Thottam Products"
             className="w-full h-full object-cover object-center"
           />
-          {/* Left-to-right fade so text stays readable */}
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/70 to-transparent" />
+          {/* Left-to-right fade so text stays readable on desktop, bottom-to-top/dark overlay on mobile */}
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent lg:bg-gradient-to-r lg:from-brand-dark lg:via-brand-dark/70 lg:to-transparent" />
         </div>
 
-
-
         {/* Content */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-5 md:px-10 pt-28 pb-20">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-5 md:px-10 pt-8 pb-16 lg:pt-28 lg:pb-20">
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -98,7 +104,7 @@ const Home = () => {
               {[
                 { val: '100%', label: 'Natural' },
                 { val: '0', label: 'Preservatives' },
-                { val: '16+', label: 'Products' },
+                { val: '34+', label: 'Products' },
               ].map(({ val, label }) => (
                 <div key={label}>
                   <p className="text-brand-saffron font-playfair font-bold text-2xl md:text-3xl">{val}</p>
@@ -126,7 +132,7 @@ const Home = () => {
             <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase mb-4 block">Our Commitment</span>
             <h2 className="font-playfair font-bold text-brand-dark text-3xl sm:text-4xl md:text-5xl">
               Why{' '}
-              <span className="text-brand-maroon italic">Uzhavan Thottam</span>?
+              <span className="text-brand-maroon">Uzhavan Thottam</span>?
             </h2>
             <div className="h-px w-16 bg-brand-saffron mx-auto mt-5" />
           </AnimatedSection>
@@ -212,7 +218,7 @@ const Home = () => {
                 Handpicked For You
               </span>
               <h2 className="font-playfair font-bold text-brand-cream text-3xl sm:text-4xl md:text-5xl">
-                Our <span className="text-brand-saffron italic">Collections</span>
+                Our <span className="text-brand-saffron">Collections</span>
               </h2>
               <div className="h-px w-12 bg-brand-saffron mt-4" />
             </AnimatedSection>
@@ -265,7 +271,7 @@ const Home = () => {
               <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase mb-4 block">Since 2024</span>
               <h2 className="font-playfair font-bold text-brand-dark text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
                 Reviving the Wisdom<br />
-                <span className="text-brand-maroon italic">of Our Ancestors</span>
+                <span className="text-brand-maroon">of Our Ancestors</span>
               </h2>
               <div className="h-px w-10 bg-brand-saffron mb-7" />
               <p className="text-brand-dark/65 text-base md:text-lg leading-relaxed mb-8">
@@ -307,7 +313,7 @@ const Home = () => {
           <AnimatedSection direction="up" className="text-center mb-14">
             <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase mb-3 block">Happy Customers</span>
             <h2 className="font-playfair font-bold text-brand-cream text-3xl sm:text-4xl md:text-5xl">
-              What Our <span className="text-brand-saffron italic">Community</span> Says
+              What Our <span className="text-brand-saffron">Community</span> Says
             </h2>
           </AnimatedSection>
 
@@ -320,7 +326,7 @@ const Home = () => {
               >
                 <div className="bg-brand-olive/30 border border-brand-cream/10 p-7 border-b-4 border-brand-saffron hover:-translate-y-1 transition-transform duration-300 h-full">
                   <div className="text-brand-saffron/15 text-6xl font-playfair leading-none mb-4 select-none">"</div>
-                  <p className="text-brand-cream/65 italic text-sm leading-relaxed mb-6">"{t.content}"</p>
+                  <p className="text-brand-cream/65 text-sm leading-relaxed mb-6">"{t.content}"</p>
                   <div className="flex items-center gap-4">
                     <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-brand-saffron/60" />
                     <div>
@@ -348,7 +354,7 @@ const Home = () => {
             <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase mb-5 block">Ready to Start?</span>
             <h2 className="font-playfair font-bold text-brand-cream text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-10">
               Experience Pure<br />
-              <span className="text-brand-saffron italic">Organic Goodness</span>
+              <span className="text-brand-saffron">Organic Goodness</span>
             </h2>
             <div className="flex flex-wrap justify-center gap-5">
               <Link

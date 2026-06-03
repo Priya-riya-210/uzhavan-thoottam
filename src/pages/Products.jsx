@@ -5,7 +5,14 @@ import AnimatedSection from '../components/AnimatedSection';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/mockData';
 
+import useDocumentMetadata from '../hooks/useDocumentMetadata';
+
 const Products = () => {
+  useDocumentMetadata({
+    title: 'Our Organic Products Collection',
+    description: 'Explore our collection of 100% organic, traditionally processed products. Shop cold-pressed oils, natural sweeteners, honey, dry fruits, and spices direct from farm to your kitchen.',
+    keywords: 'organic sweeteners, wood pressed oil, traditional spices, natural food powders, purchase organic online, Uzhavan Thottam catalog'
+  });
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -32,7 +39,7 @@ const Products = () => {
         <div className="container-custom relative z-10 px-6 text-center">
           <AnimatedSection>
             <span className="text-brand-saffron font-bold tracking-[0.28em] uppercase text-xs mb-4 block">Our Collection</span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-brand-cream italic mb-5">All Products</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-brand-cream mb-5">All Products</h1>
             <p className="text-brand-cream/50 max-w-xl mx-auto text-base md:text-lg">
               Traditionally processed, 100% organic products sourced directly from nature's lap.
             </p>
@@ -87,7 +94,7 @@ const Products = () => {
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-brand-dark/40 text-xl font-playfair italic">No products found matching your criteria.</p>
+              <p className="text-brand-dark/40 text-xl font-playfair">No products found matching your criteria.</p>
             </div>
           )}
         </div>

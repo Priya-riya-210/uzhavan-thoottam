@@ -14,7 +14,14 @@ const catAccent = {
   Products: { bg: '#C8A96B', light: '#fdf6e3', text: '#7A5C2E' },
 };
 
+import useDocumentMetadata from '../hooks/useDocumentMetadata';
+
 const Gallery = () => {
+  useDocumentMetadata({
+    title: 'Our Farm & Craft Gallery',
+    description: 'Take a visual journey into our fields. See our golden harvests, traditional wood-pressing processing, and organic farming methods at Uzhavan Thottam.',
+    keywords: 'farming gallery, organic harvest photos, wood pressing pictures, agriculture gallery, Uzhavan Thottam photos'
+  });
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -40,7 +47,7 @@ const Gallery = () => {
             <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase mb-4 block">
               Visual Journey
             </span>
-            <h1 className="font-playfair font-bold text-brand-cream text-4xl sm:text-5xl md:text-7xl italic mb-5">
+            <h1 className="font-playfair font-bold text-brand-cream text-4xl sm:text-5xl md:text-7xl mb-5">
               Our Farm &amp; Craft
             </h1>
             <p className="text-brand-cream/50 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
@@ -135,7 +142,7 @@ const Gallery = () => {
           </motion.div>
 
           {filtered.length === 0 && (
-            <div className="text-center py-24 text-brand-dark/30 font-playfair italic text-xl">
+            <div className="text-center py-24 text-brand-dark/30 font-playfair text-xl">
               No images in this category.
             </div>
           )}
@@ -198,7 +205,7 @@ const Gallery = () => {
             <span className="text-brand-saffron text-xs font-bold tracking-[0.28em] uppercase mb-5 block">
               Follow Our Story
             </span>
-            <h2 className="font-playfair font-bold text-brand-cream text-3xl sm:text-4xl md:text-5xl italic mb-4">
+            <h2 className="font-playfair font-bold text-brand-cream text-3xl sm:text-4xl md:text-5xl mb-4">
               @Uzhavan_2026
             </h2>
             <p className="text-brand-cream/40 text-sm mb-10">

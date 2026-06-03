@@ -23,7 +23,15 @@ const TwitterIcon = ({ size = 20 }) => (
 );
 import AnimatedSection from '../components/AnimatedSection';
 
+import useDocumentMetadata from '../hooks/useDocumentMetadata';
+
 const Contact = () => {
+  useDocumentMetadata({
+    title: 'Contact Us & Inquiry Form',
+    description: 'Get in touch with Uzhavan Thottam. Reach out for bulk orders, product questions, farm visits, or feedback. We are located in Karur, Tamil Nadu.',
+    keywords: 'contact Uzhavan Thottam, phone number, email support, farm location, bulk inquiries, Karur agriculture'
+  });
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -105,7 +113,7 @@ const Contact = () => {
           <AnimatedSection>
             <span className="text-brand-saffron font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Connect With Us</span>
             <h1 className="text-5xl md:text-7xl font-playfair font-bold text-brand-cream mb-6">Get In Touch</h1>
-            <p className="text-brand-cream/60 max-w-2xl mx-auto text-lg italic">
+            <p className="text-brand-cream/60 max-w-2xl mx-auto text-lg">
               Have questions about our products or farming practices? We'd love to hear from you.
             </p>
           </AnimatedSection>
@@ -156,8 +164,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-brand-dark mb-1 tracking-wider uppercase text-sm">Email Us</h3>
-                      <a href="mailto:hello@uzhavanthottam.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">hello@uzhavanthottam.com</a>
-                      <a href="mailto:support@uzhavanthottam.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">support@uzhavanthottam.com</a>
+                      <a href="mailto:uzhavanthottam26@gmail.com" className="text-brand-dark/60 leading-relaxed hover:text-brand-saffron/80 transition-colors block">uzhavanthottam26@gmail.com</a>
                     </div>
                   </div>
                 </div>
@@ -182,7 +189,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <AnimatedSection className="bg-white p-10 md:p-16 shadow-2xl rounded-sm border-t-8 border-brand-saffron">
-                <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-10 italic">Send a Message</h2>
+                <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-10">Send a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {status.info.msg && (
                     <div className={`p-4 rounded-sm text-sm font-semibold transition-all duration-300 ${
@@ -289,7 +296,7 @@ const Contact = () => {
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="text-center text-brand-saffron">
             <MapPin size={48} className="mx-auto mb-4 animate-bounce" />
-            <h3 className="text-2xl font-playfair italic group-hover:scale-105 transition-transform duration-300">Visit Our Farm</h3>
+            <h3 className="text-2xl font-playfair group-hover:scale-105 transition-transform duration-300">Visit Our Farm</h3>
             <p className="text-brand-cream/60 text-xs tracking-widest uppercase mt-2">Click to open in Google Maps</p>
           </div>
         </div>
