@@ -44,7 +44,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <button onClick={() => handleNav('/')} className="flex items-center gap-3 focus:outline-none">
-          <img src={logo} alt="Logo" className="w-9 h-9 rounded-full border border-brand-saffron/60 object-cover" />
+          <img src={logo} alt="Uzhavan Thottam Logo" className="w-9 h-9 rounded-full border border-brand-saffron/60 object-cover" />
           <span className="font-playfair font-bold tracking-wider text-xl leading-none">
             <span className="text-brand-saffron">UZHAVAN</span>
             <span className="text-brand-cream ml-1.5">THOTTAM</span>

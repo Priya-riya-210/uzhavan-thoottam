@@ -7,24 +7,25 @@ import img1 from '../assets/about/img-1.webp';
 import sugarCaneImg from '../assets/product-images/sugar-cane-img.webp';
 import img3 from '../assets/about/img-3.webp';
 
-import useDocumentMetadata from '../hooks/useDocumentMetadata';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
-  useDocumentMetadata({
-    title: 'Our Story & Legacy',
-    description: 'Learn about Uzhavan Thottam\'s legacy. We are rooted in tradition, grown with love, and committed to bringing wood-pressed oils, natural sweeteners, and organic foods from local farmers to your home.',
-    keywords: 'traditional farming legacy, about Uzhavan Thottam, wood pressed oils process, organic philosophy, local farmers empowerment'
-  });
 
   return (
     <div className="pt-14 bg-brand-cream">
+      <Helmet>
+        <title>Our Story &amp; Legacy | Uzhavan Thottam</title>
+        <meta name="description" content="Learn about Uzhavan Thottam's legacy. We are rooted in tradition, grown with love, and committed to bringing wood-pressed oils, natural sweeteners, and organic foods from local farmers to your home." />
+        <meta name="keywords" content="traditional farming legacy, about Uzhavan Thottam, wood pressed oils process, organic philosophy, local farmers empowerment" />
+      </Helmet>
       {/* Page Header */}
       <section className="relative py-20 bg-brand-dark overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img
             src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=2000"
             className="w-full h-full object-cover"
-            alt="Farm background"
+            alt="Uzhavan Thottam Organic Farm field background"
+            loading="lazy"
           />
         </div>
         <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-saffron to-brand-maroon" />
@@ -54,7 +55,7 @@ const About = () => {
               <div className="aspect-video lg:aspect-square rounded-sm overflow-hidden shadow-2xl">
                 <img
                   src={nutsImg}
-                  alt="Traditional Farming"
+                  alt="Uzhavan Thottam Raw Dry Fruits and Nuts Process"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -69,8 +70,9 @@ const About = () => {
               <div className="aspect-video lg:aspect-square rounded-sm overflow-hidden shadow-2xl">
                 <img
                   src={coffeeBeansImg}
-                  alt="Quality Control"
+                  alt="Uzhavan Thottam Quality Organic Coffee Beans"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </AnimatedSection>
@@ -145,10 +147,17 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
             {[
-              img1, sugarCaneImg, img3
-            ].map((img, i) => (
+              { src: img1, alt: "Uzhavan Thottam Partner Farmer harvesting organic produce" },
+              { src: sugarCaneImg, alt: "Uzhavan Thottam Partner Farmer with fresh sugarcane harvest" },
+              { src: img3, alt: "Uzhavan Thottam Partner Farmer working in organic fields" }
+            ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.1} className="overflow-hidden group">
-                <img src={img} alt="Farmer" className="w-full h-80 object-cover lg:grayscale lg:hover:grayscale-0 transition-all duration-700" />
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-80 object-cover lg:grayscale lg:hover:grayscale-0 transition-all duration-700"
+                  loading="lazy"
+                />
               </AnimatedSection>
             ))}
           </div>
@@ -158,8 +167,9 @@ const About = () => {
             <div className="rounded-sm overflow-hidden shadow-2xl border border-brand-dark/5 bg-white p-2">
               <img
                 src={farmingMethods}
-                alt="Organic Farming Methods"
+                alt="Uzhavan Thottam Types and Methods of Organic Farming Diagram"
                 className="w-full h-auto object-contain"
+                loading="lazy"
               />
             </div>
           </AnimatedSection>

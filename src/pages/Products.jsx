@@ -5,14 +5,9 @@ import AnimatedSection from '../components/AnimatedSection';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/mockData';
 
-import useDocumentMetadata from '../hooks/useDocumentMetadata';
+import { Helmet } from 'react-helmet-async';
 
 const Products = () => {
-  useDocumentMetadata({
-    title: 'Our Organic Products Collection',
-    description: 'Explore our collection of 100% organic, traditionally processed products. Shop cold-pressed oils, natural sweeteners, honey, dry fruits, and spices direct from farm to your kitchen.',
-    keywords: 'organic sweeteners, wood pressed oil, traditional spices, natural food powders, purchase organic online, Uzhavan Thottam catalog'
-  });
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -29,6 +24,11 @@ const Products = () => {
 
   return (
     <div className="pt-14 bg-[#F7F2EA] ">
+      <Helmet>
+        <title>Our Organic Products Collection | Uzhavan Thottam</title>
+        <meta name="description" content="Explore our collection of 100% organic, traditionally processed products. Shop cold-pressed oils, natural sweeteners, honey, dry fruits, and spices direct from farm to your kitchen." />
+        <meta name="keywords" content="organic sweeteners, wood pressed oil, traditional spices, natural food powders, purchase organic online, Uzhavan Thottam catalog" />
+      </Helmet>
       {/* Header */}
       <section className="py-20 bg-brand-dark text-brand-cream relative overflow-hidden">
         <div

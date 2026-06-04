@@ -14,14 +14,9 @@ const catAccent = {
   Products: { bg: '#C8A96B', light: '#fdf6e3', text: '#7A5C2E' },
 };
 
-import useDocumentMetadata from '../hooks/useDocumentMetadata';
+import { Helmet } from 'react-helmet-async';
 
 const Gallery = () => {
-  useDocumentMetadata({
-    title: 'Our Farm & Craft Gallery',
-    description: 'Take a visual journey into our fields. See our golden harvests, traditional wood-pressing processing, and organic farming methods at Uzhavan Thottam.',
-    keywords: 'farming gallery, organic harvest photos, wood pressing pictures, agriculture gallery, Uzhavan Thottam photos'
-  });
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -31,6 +26,11 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-[#F7F2EA]">
+      <Helmet>
+        <title>Our Farm &amp; Craft Gallery | Uzhavan Thottam</title>
+        <meta name="description" content="Take a visual journey into our fields. See our golden harvests, traditional wood-pressing processing, and organic farming methods at Uzhavan Thottam." />
+        <meta name="keywords" content="farming gallery, organic harvest photos, wood pressing pictures, agriculture gallery, Uzhavan Thottam photos" />
+      </Helmet>
 
       {/* ── Header ──────────────────────────── */}
       <section className="py-20 bg-brand-dark relative overflow-hidden">

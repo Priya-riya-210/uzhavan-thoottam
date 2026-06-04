@@ -21,16 +21,10 @@ const TwitterIcon = ({ size = 20 }) => (
     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
   </svg>
 );
+import { Helmet } from 'react-helmet-async';
 import AnimatedSection from '../components/AnimatedSection';
 
-import useDocumentMetadata from '../hooks/useDocumentMetadata';
-
 const Contact = () => {
-  useDocumentMetadata({
-    title: 'Contact Us & Inquiry Form',
-    description: 'Get in touch with Uzhavan Thottam. Reach out for bulk orders, product questions, farm visits, or feedback. We are located in Karur, Tamil Nadu.',
-    keywords: 'contact Uzhavan Thottam, phone number, email support, farm location, bulk inquiries, Karur agriculture'
-  });
 
   const [formData, setFormData] = useState({
     name: '',
@@ -106,6 +100,11 @@ const Contact = () => {
 
   return (
     <div className="pt-14 bg-brand-cream min-h-screen">
+      <Helmet>
+        <title>Contact Us &amp; Inquiry Form | Uzhavan Thottam</title>
+        <meta name="description" content="Get in touch with Uzhavan Thottam. Reach out for bulk orders, product questions, farm visits, or feedback. We are located in Karur, Tamil Nadu." />
+        <meta name="keywords" content="contact Uzhavan Thottam, phone number, email support, farm location, bulk inquiries, Karur agriculture" />
+      </Helmet>
       {/* Header */}
       <section className="py-20 bg-brand-dark text-brand-cream overflow-hidden relative">
         <div className="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-brand-saffron via-brand-saffron to-brand-maroon" />
@@ -303,7 +302,8 @@ const Contact = () => {
         <img
           src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000"
           className="w-full h-full object-cover opacity-20 transition-transform duration-700 group-hover:scale-105"
-          alt="Map context"
+          alt="Uzhavan Thottam Organic Farm field location map placeholder"
+          loading="lazy"
         />
       </a>
     </div>

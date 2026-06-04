@@ -17,19 +17,21 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
 };
 
-import useDocumentMetadata from '../hooks/useDocumentMetadata';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
-  useDocumentMetadata({
-    title: 'Pure & Organic Foods Direct From Farmers',
-    description: 'Welcome to Uzhavan Thottam. We offer farm-fresh, chemical-free, traditionally crafted organic products delivered straight to your door. Pure, natural, and trusted.',
-    keywords: 'organic food, farm fresh, chemical-free products, wood pressed oil, natural sweeteners, traditional farming, Uzhavan Thottam'
-  });
-
   const featuredProducts = products.slice(0, 8);
 
   return (
     <div className="overflow-hidden">
+      <Helmet>
+        <title>Uzhavan Thottam | Traditional Organic Foods</title>
+        <meta
+          name="description"
+          content="Uzhavan Thottam offers traditional organic foods, wood pressed oils, natural products and authentic Tamil flavors."
+        />
+        <meta name="keywords" content="organic food, farm fresh, chemical-free products, wood pressed oil, natural sweeteners, traditional farming, Uzhavan Thottam" />
+      </Helmet>
 
       {/* ══════════════════════════════════════
           HERO — dark green, no blur overlay
@@ -39,7 +41,7 @@ const Home = () => {
         <div className="relative lg:absolute lg:inset-y-0 lg:right-0 w-full lg:w-[55%] h-[350px] sm:h-[450px] lg:h-full z-10 lg:z-0">
           <img
             src={heroImg}
-            alt="Uzhavan Thottam Products"
+            alt="Uzhavan Thottam Premium Traditional and Organic Foods Collection"
             className="w-full h-full object-cover object-center"
           />
           {/* Left-to-right fade so text stays readable on desktop, bottom-to-top/dark overlay on mobile */}
@@ -253,8 +255,9 @@ const Home = () => {
               <div className="overflow-hidden aspect-[4/5]">
                 <img
                   src={natureImg}
-                  alt="Organic Farming"
+                  alt="Uzhavan Thottam Organic Farming Methods and Fields"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
               </div>
               {/* Corner decorations */}
