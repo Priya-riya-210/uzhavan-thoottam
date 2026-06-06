@@ -56,13 +56,16 @@ const Contact = () => {
     });
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/uzhavanthottam26@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/094885df4f1acc7b7087c7553b8166dd", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          _captcha: "false"
+        }),
       });
 
       const data = await res.json();
@@ -72,7 +75,7 @@ const Contact = () => {
           submitting: false,
           info: {
             error: false,
-            msg: "Your message has been sent successfully! If this is the first submission, please click the activation/verification link sent to your email inbox.",
+            msg: "Your message has been sent successfully!",
           },
         });
         setFormData({
